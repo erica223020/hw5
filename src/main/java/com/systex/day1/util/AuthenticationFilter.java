@@ -35,6 +35,9 @@ public class AuthenticationFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
+	request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         // CSP
         res.setHeader("Content-Security-Policy", 
         	    "default-src 'self'; " +
