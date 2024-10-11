@@ -1,3 +1,15 @@
+# hw5
+
+### 有預設一組帳密 
+* 帳號:testUser
+* 密碼:abc123
+* 登入首頁(http://localhost:8081/projectA/login)
+* Ajax登入首頁(http://localhost:8081/hw5/ajaxlogin)
+
+### 使用方式
+
+* 請使用STS4 `Run As` 的 `Spring Boot App`
+
 = Postman/cURL 用途簡易說明
 
 == 1. 主要用途
