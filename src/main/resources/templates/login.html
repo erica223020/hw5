@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>登入</title>
+     <!--Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="icon" href="images/lottery.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" href="styles/login-style.css" />
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="card shadow-lg p-4" style="width: 24rem; border-radius: 10px">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">會員登入</h3>
+          	<div th:if="${error != null}" class="alert alert-danger" role="alert">
+	    		<span th:text="${error}"></span>
+			</div>
+          <form th:action="@{/login}" method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control form-control-lg rounded-pill"
+                id="username"
+                name="username"
+                placeholder="帳號"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <input
+                type="password"
+                class="form-control form-control-lg rounded-pill"
+                id="password"
+                name="password"
+                placeholder="密碼"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg btn-block rounded-pill mt-4"
+              style="background-color: #ff7f50; border: none"
+            >
+              登入
+            </button>
+          </form>
+          <div class="text-center mt-3">
+            還沒成為會員?
+            <a
+              th:href="@{/register}"
+              class="text-primary"
+              style="color: #ff7f50"
+              >註冊</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

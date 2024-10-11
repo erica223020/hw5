@@ -1,0 +1,23 @@
+= Postman/cURL 用途簡易說明
+
+== 1. 主要用途
+* cURL: 是一個命令列工具，用來發送 HTTP 請求來測試 API，也支援多種協定 (FTP、IMAP 等)。可以模擬不同類型的 HTTP 請求，並處理標頭、查詢參數等。
++
+[source,bash]
+----
+# 發送附帶 JSON 數據的 POST 請求
+curl -X POST "https://api.example.com/data" -H "Content-Type: application/json" -d '{"name": "John", "age": 30}'
+----
+
+* Postman: 是一個圖形化介面工具，可以模擬 HTTP Request，幫助開發人員測試 API 是否正常回應，會以視覺化的方式呈現請求和回應的詳細資料。
++
+image::https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_ccacf7afe9972bd9e2857ab017ecc964.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1727774475&Signature=MABkO0pHi0oGJahcMOgpT8tOo8g%3D[圖片]
+
+
+== 2. 使用時機
+* cURL: 適合用於自動化測試、腳本以及快速發送簡單的請求，尤其是在命令列環境中或是需要自動化流程的時候。
+* Postman: 適合手動測試 API，尤其在需要編輯 API 文件或管理多個測試請求以及與團隊成員分享測試案例時。
+
+== 3. 特色補充
+* cURL: 除了支持標頭（如 `-H`）和數據傳送（如 `-d`），也支持各種不同認證方式，例如 Basic Auth (`-u`)。
+* Postman: 支援使用測試腳本（如 Pre-request 和 Test scripts）來進行更複雜的測試自動化，也提供 Collection 管理來組織 API 測試，並可生成 API 文件以供團隊使用。

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>註冊</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="icon" href="images/lottery.jpg" type="image/x-icon"/>
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="card shadow-lg p-4" style="width: 24rem; border-radius: 10px">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">註冊會員</h3>
+          	 <div th:if="${error != null}" class="alert alert-danger" role="alert">
+	    		<span th:text="${error}"></span>
+			</div>
+          <form th:action="@{/register}" method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control form-control-lg rounded-pill"
+                id="username"
+                name="username"
+                placeholder="帳號"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <input
+                type="password"
+                class="form-control form-control-lg rounded-pill"
+                id="password"
+                name="password"
+                placeholder="密碼"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg btn-block rounded-pill mt-4"
+              style="background-color: #ff7f50; border: none"
+            >
+              註冊
+            </button>
+          </form>
+          <div class="text-center mt-3">
+            已經有帳號了嗎？<a
+              th:href="@{/login}"
+              class="text-primary"
+              style="color: #ff7f50"
+              >登入</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    	<footer class="text-center" style="background-color: #fce3c5; padding: 5px; position: fixed; bottom: 0; width: 100%;">
+	    <div class="container">
+	        <p style="color: #333;">&copy; 2024 Lottery Game. All rights reserved.</p>
+	        <p style="color: #333;">小賭怡情，大賭看門診｜博弈門診：<span style="color: red;">(02) 2726-3141 分機 1140</span></p>
+	    </div>
+	</footer>
+    <script src="js/logout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>註冊</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!--SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    <link rel="icon" href="images/lottery.jpg" type="image/x-icon" />
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-lg p-4" style="width: 24rem; border-radius: 10px">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">註冊會員(Ajax)</h3>
+                <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            class="form-control form-control-lg rounded-pill"
+                            id="username"
+                            name="username"
+                            placeholder="帳號(6~10個字元)"
+                            required
+                        />
+                    </div>
+                    <div class="form-group mt-3">
+                        <input
+                            type="password"
+                            class="form-control form-control-lg rounded-pill"
+                            id="password"
+                            name="password"
+                            placeholder="密碼(6~10個字元)"
+                            required
+                        />
+                    </div>
+                    <div class="form-group mt-3">
+                        <input
+                            type="password"
+                            class="form-control form-control-lg rounded-pill"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="再次確認密碼"
+                            minlength="6"
+                            maxlength="10"
+                            required
+                        />
+                    </div>
+                    <button
+                        type="button"
+                        id="registerButton"
+                        class="btn btn-primary btn-lg btn-block rounded-pill mt-4"
+                        style="background-color: #ff7f50; border: none"
+                    >
+                        註冊
+                    </button>
+                </form>
+                <div class="text-center mt-3">
+                    已經有帳號了嗎？<a th:href="@{/ajaxlogin}" class="text-primary" style="color: #ff7f50">登入</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入自己的外部 JS 文件 -->
+    <script src="js/ajaxregister.js"></script>
+    <script src="js/logout.js"></script>
+    <!-- Bootstrap JS -->
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  </body>
+</html>
