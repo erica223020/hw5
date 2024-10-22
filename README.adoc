@@ -3,7 +3,7 @@
 ### 有預設一組帳密 
 * 帳號:testUser
 * 密碼:abc123
-* 登入首頁(http://localhost:8081/projectA/login)
+* 登入首頁(http://localhost:8081/hw5/login)
 * Ajax登入首頁(http://localhost:8081/hw5/ajaxlogin)
 
 ### 使用方式
